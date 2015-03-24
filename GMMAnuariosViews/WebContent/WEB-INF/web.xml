@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>GMMAnuariosViews</display-name>
+  <context-param>
+    <param-name>org.richfaces.skin</param-name>
+    <param-value>deepMarine</param-value>
+  </context-param>
+  <context-param>
+    <param-name>javax.faces.PROJECT_STAGE</param-name>
+    <param-value>Development</param-value>
+  </context-param>
+  <context-param>
+    <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+    <param-value>client</param-value>
+</context-param>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <!--  filter>
+    <filter-name>HibernateSessionFilter</filter-name>
+    <filter-class>br.com.gmm.mailing.filters.HibernateSessionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>HibernateSessionFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping -->
+<servlet>
+		<servlet-name>SchedulerAgent</servlet-name>
+		<servlet-class>br.com.gmm.anuariosviews.scheduler.SchedulerAgent</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SchedulerAgent</servlet-name>
+		<url-pattern>/SchedulerAgent</url-pattern>
+	</servlet-mapping>
+</web-app>
